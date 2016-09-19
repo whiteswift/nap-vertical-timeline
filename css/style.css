@@ -85,7 +85,7 @@ header h1 {
   color: grey;
   text-decoration: none;
 }
-.tags > a::after {
+.tags > a:not(:last-child):after {
     content: ",";
 }
 
