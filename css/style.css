@@ -16,7 +16,7 @@ body {
 }
 
 a {
-  color: rgba(43,43,43,1); 
+  color: rgba(43,43,43,1);
   text-decoration: underline;
   font-family: Georgia, sans-serif;
 }
@@ -30,7 +30,7 @@ h1, h2 {
   font-size: 3em;
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
 Modules - reusable parts of our design
 
@@ -48,9 +48,9 @@ Modules - reusable parts of our design
   clear: both;
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
-Main components 
+Main components
 
 -------------------------------- */
 header {
@@ -73,6 +73,20 @@ header h1 {
     font-size: 24px;
     font-size: 1.5rem;
   }
+}
+
+.tags {
+  padding: 0 0 1em 0;
+}
+
+.tags > a {
+  font-style: italic;
+  margin: 0 0.3em 0 0;
+  color: grey;
+  text-decoration: none;
+}
+.tags > a::after {
+    content: ",";
 }
 
 #cd-timeline {
@@ -127,6 +141,12 @@ header h1 {
   .cd-timeline-block:last-child {
     margin-bottom: 0;
   }
+  .cd-timeline-block:nth-child(odd) {
+    text-align: right;
+  }
+  .cd-timeline-block:nth-child(even) {
+    text-align: left;
+  }
 }
 
 .cd-timeline-img {
@@ -158,10 +178,10 @@ header h1 {
 }
 @media only screen and (min-width: 1170px) {
   .cd-timeline-img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     left: 50%;
-    margin-left: -30px;
+    margin-left: -26px;
     /* Force Hardware Acceleration in WebKit */
     -webkit-transform: translateZ(0);
     -webkit-backface-visibility: hidden;
@@ -294,7 +314,7 @@ header h1 {
 @media only screen and (min-width: 1170px) {
   .cd-timeline-content {
     margin-left: 0;
-    padding: 1.6em;
+    padding: 0 1.6em 1.6em 1.6em;
     width: 45%;
   }
   .cd-timeline-content::before {
@@ -304,7 +324,7 @@ header h1 {
     border-left-color: white;
   }
   .cd-timeline-content .cd-read-more {
-    float: left;
+
   }
   .cd-timeline-content .cd-date {
     position: absolute;
@@ -324,14 +344,23 @@ header h1 {
     border-color: transparent;
     border-right-color: white;
   }
+
   .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-read-more {
+    float: left;
+  }
+  .cd-timeline-block:nth-child(odd) .cd-timeline-content .cd-read-more {
     float: right;
   }
+
   .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-date {
     left: auto;
     right: 122%;
     text-align: right;
   }
+  .cd-timeline-block:nth-child(odd) .cd-timeline-content .cd-date {
+    text-align: left;
+  }
+
   .cssanimations .cd-timeline-content.is-hidden {
     visibility: hidden;
   }
