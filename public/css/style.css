@@ -17,8 +17,36 @@ body {
 
 a {
   color: rgba(43,43,43,1);
-  text-decoration: underline;
   font-family: Georgia, sans-serif;
+  position: relative;
+  text-decoration: underline;
+  text-decoration-skip: ink;
+  display: inline-block;
+}
+
+.cd-read-more {
+  text-decoration: none;
+  text-decoration-skip: ink;
+  display: inline-block;
+  line-height: 1.4em;
+}
+
+.cd-read-more::after {
+  content: "";
+  margin: auto;
+  background: black;
+  position: absolute;
+  text-align: center;
+  bottom: 0px;
+  height: 2px;
+  left: 0;
+  right: 0;
+  width: 50%;
+  transition: width .5s;
+}
+
+.cd-read-more:hover::after{
+  width:100%;
 }
 
 img {
